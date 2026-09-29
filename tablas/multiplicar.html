@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla del 3</title>
+    <link rel="stylesheet" href="multiplicar.css">
+
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Tabla de Multiplicar</h1>
+        
+        <!-- PARTE 9: Instrucciones claras -->
+        <p class="instrucciones">¡Hola! Ingresa un número para descubrir su tabla de multiplicar.</p>
+        
+        <!-- PARTE 7: Caja de texto -->
+        <input type="number" id="inputNumero" class="caja-texto" placeholder="Escribe un número aquí (Ej: 8)">
+        
+        <!-- Botón para generar la tabla -->
+        <button class="btn-probar" onclick="generarTablas();">GENERAR TABLA</button>
+        
+        <!-- Contenedor dinámico -->
+        <div class="tabla-multiplicar" id="txtTabla">
+            <!-- La tabla aparecerá aquí -->
+        </div>
+    </div>
+    <script src="multiplicar.js"></script>
+</body>
+</html>

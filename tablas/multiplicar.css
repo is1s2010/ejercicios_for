@@ -1,0 +1,218 @@
+/* Reset básico de estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Tipografía muy clara, se priorizan fuentes redondeadas amigables */
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    /* Fondo llamativo con un degradado vibrante de tonos cálidos */
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.contenedor {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 30px;
+    border-radius: 24px;
+    /* Borde grueso de color morado vibrante que parece el marco de un juguete */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15), 0 0 0 8px #a29bfe; 
+    text-align: center;
+    /* Animación de entrada de rebote */
+    animation: rebotar 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes rebotar {
+    0% { transform: translateY(40px) scale(0.8); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Estilos del botón superior - Color fucsia neón llamativo */
+.btn-probar {
+    background-color: #ff4757;
+    color: #ffffff;
+    border: none;
+    padding: 16px 30px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 30px;
+    /* Efecto 3D grueso y llamativo */
+    box-shadow: 0 6px 0 #ff1e34; 
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    animation: latido 2s infinite;
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+.btn-probar:hover {
+    background-color: #ff6b81;
+    transform: translateY(2px) scale(1.03);
+    box-shadow: 0 4px 0 #ff1e34;
+}
+
+.btn-probar:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #ff1e34;
+    animation: none;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    color: #6c5ce7; /* Morado intenso para el título */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0px #dfe6e9; /* Sombra divertida */
+}
+
+/* Estructura responsiva de la tabla mediante Flexbox */
+.tabla-multiplicar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: default;
+    
+    /* Colores por defecto para filas impares (Turquesa vibrante) */
+    background-color: #81ecec;
+    border: 3px solid #00cec9;
+    color: #006266;
+}
+
+/* Colores para filas pares (Amarillo vibrante) */
+.fila:nth-child(even) {
+    background-color: #ffeaa7;
+    border: 3px solid #fdcb6e;
+    color: #b33939;
+}
+
+/* Interacción súper llamativa al pasar el ratón o tocar en móvil */
+.fila:hover {
+    transform: translateX(10px) scale(1.05) rotate(1deg); /* Ligera rotación divertida */
+    background-color: #fd79a8; /* Rosa chicle al hacer hover */
+    border-color: #e84393;
+    color: #ffffff;
+    box-shadow: -4px 6px 15px rgba(232, 67, 147, 0.4);
+}
+
+/* ========================================= */
+/* CONSULTAS DE MEDIOS (MEDIA QUERIES)       */
+/* ========================================= */
+
+/* Pantallas pequeñas (Móviles - Hasta 480px) */
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 25px 20px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1), 0 0 0 6px #a29bfe;
+    }
+    
+    .btn-probar {
+        padding: 14px 20px;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .fila {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+        border-width: 2px;
+    }
+    
+    /* Adaptar animación hover para móviles (menos rotación y escala para evitar desbordes) */
+    .fila:hover {
+        transform: translateX(5px) scale(1.02);
+    }
+}
+
+/* Pantallas medianas (Tablets - 481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .contenedor {
+        max-width: 85%;
+        padding: 35px 25px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .fila {
+        font-size: 1.3rem;
+        padding: 14px 20px;
+    }
+}
+
+/* Pantallas grandes (Computadoras - 769px en adelante) */
+@media (min-width: 769px) {
+    .fila {
+        padding: 15px 30px;
+    }
+}
+/* Estilos para las instrucciones (Parte 9) */
+.instrucciones {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Estilos para la caja de texto (Parte 7) */
+.caja-texto {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 3px solid #a29bfe;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.caja-texto:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
+    transform: scale(1.02);
+}
+
+/* Estilos para el mensaje de ayuda (Parte 9) */
+.mensaje-ayuda {
+    background-color: #ff7675;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: rebotar 0.5s ease;
+}
